@@ -222,9 +222,7 @@
 
 .chat-panel__suggested-icon {
   color: var(--color-accent);
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .chat-panel__composer {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Clock, Maximize2, Info, Paperclip, Mic, SendHorizonal, Plus } from "lucide-react";
 import { chatMessages, suggestedPrompts } from "../data/MockData";
-import "../styles/ChatPanel.css"
+import "../styles/ChatPanel.css";
 
 function renderMessageText(text) {
   if (typeof text === "string") return text;
@@ -22,10 +23,7 @@ export default function ChatPanel() {
     <aside className="chat-panel">
       <div className="chat-panel__header">
         <div className="chat-panel__avatar">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <circle cx="9" cy="9" r="7" stroke="var(--color-accent)" strokeWidth="1.3" />
-            <path d="M9 5.5v3.8l2.6 1.5" stroke="var(--color-accent)" strokeWidth="1.3" strokeLinecap="round" />
-          </svg>
+          <Clock size={16} color="var(--color-accent)" />
         </div>
         <div className="chat-panel__title-block">
           <div className="chat-panel__title-row">
@@ -37,38 +35,21 @@ export default function ChatPanel() {
           <span className="chat-panel__subtitle">Project assistant</span>
         </div>
         <button className="chat-panel__expand" aria-label="Expand chat">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M6 2H2v4M10 14h4v-4M14 2l-5 5M2 14l5-5"
-              stroke="#98A2B3"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Maximize2 size={15} color="#98A2B3" />
         </button>
       </div>
 
       <div className="chat-panel__notice">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <circle cx="7" cy="7" r="5.5" stroke="#98A2B3" strokeWidth="1.2" />
-          <path d="M7 6.3v3.4M7 4.6v.1" stroke="#98A2B3" strokeWidth="1.2" strokeLinecap="round" />
-        </svg>
+        <Info size={14} color="#98A2B3" style={{ flexShrink: 0, marginTop: 1 }} />
         Answers grounded in this project's sessions, moments &amp; transcripts.
       </div>
 
       <div className="chat-panel__thread">
         {chatMessages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`chat-message chat-message--${msg.role}`}
-          >
+          <div key={msg.id} className={`chat-message chat-message--${msg.role}`}>
             {msg.role === "assistant" && (
               <div className="chat-message__avatar">
-                <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="7" stroke="var(--color-accent)" strokeWidth="1.3" />
-                  <path d="M9 5.5v3.8l2.6 1.5" stroke="var(--color-accent)" strokeWidth="1.3" strokeLinecap="round" />
-                </svg>
+                <Clock size={13} color="var(--color-accent)" />
               </div>
             )}
             <div className="chat-message__content">
@@ -87,26 +68,15 @@ export default function ChatPanel() {
         <span className="chat-panel__suggested-label">SUGGESTED</span>
         {suggestedPrompts.map((prompt) => (
           <button className="chat-panel__suggested-item" key={prompt}>
-            <span className="chat-panel__suggested-icon">+</span>
+            <Plus size={14} className="chat-panel__suggested-icon" />
             {prompt}
           </button>
         ))}
       </div>
 
-      <form
-        className="chat-panel__composer"
-        onSubmit={(e) => e.preventDefault()}
-      >
+      <form className="chat-panel__composer" onSubmit={(e) => e.preventDefault()}>
         <button type="button" className="chat-panel__composer-icon" aria-label="Attach file">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path
-              d="M10.5 4.5 5.8 9.2a2 2 0 0 0 2.8 2.8l4.7-4.7a3.3 3.3 0 0 0-4.7-4.7L3.9 7.4"
-              stroke="#98A2B3"
-              strokeWidth="1.3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Paperclip size={15} color="#98A2B3" />
         </button>
         <input
           className="chat-panel__composer-input"
@@ -115,15 +85,10 @@ export default function ChatPanel() {
           onChange={(e) => setDraft(e.target.value)}
         />
         <button type="button" className="chat-panel__composer-icon" aria-label="Voice input">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <rect x="6" y="2" width="4" height="7" rx="2" stroke="#98A2B3" strokeWidth="1.3" />
-            <path d="M4 8a4 4 0 0 0 8 0M8 12v2" stroke="#98A2B3" strokeWidth="1.3" strokeLinecap="round" />
-          </svg>
+          <Mic size={15} color="#98A2B3" />
         </button>
         <button type="submit" className="chat-panel__send" aria-label="Send message">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-            <path d="M2 7.5 13 2 8 13l-1.8-4.2L2 7.5Z" fill="#fff" />
-          </svg>
+          <SendHorizonal size={14} color="#fff" />
         </button>
       </form>
     </aside>

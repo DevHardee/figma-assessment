@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowRight } from "lucide-react";
 import { sentiment } from "../data/MockData";
 import "../styles/InsightsRow.css";
 
@@ -12,10 +13,7 @@ export default function InsightsRow() {
             <p className="card__subtitle">Across all completed moments</p>
           </div>
           <a className="card__link" href="#all-moments">
-            View all moments
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M3 6h6M6.5 3.5 9 6l-2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            View all moments <ArrowRight size={13} />
           </a>
         </div>
 
@@ -35,18 +33,9 @@ export default function InsightsRow() {
         </div>
 
         <div className="sentiment-card__legend">
-          <span>
-            <i className="legend-dot legend-dot--positive" /> Positive{" "}
-            {sentiment.positive}%
-          </span>
-          <span>
-            <i className="legend-dot legend-dot--neutral" /> Neutral{" "}
-            {sentiment.neutral}%
-          </span>
-          <span>
-            <i className="legend-dot legend-dot--negative" /> Negative{" "}
-            {sentiment.negative}%
-          </span>
+          <span><i className="legend-dot legend-dot--positive" /> Positive {sentiment.positive}%</span>
+          <span><i className="legend-dot legend-dot--neutral" /> Neutral {sentiment.neutral}%</span>
+          <span><i className="legend-dot legend-dot--negative" /> Negative {sentiment.negative}%</span>
         </div>
       </div>
 
@@ -57,10 +46,7 @@ export default function InsightsRow() {
             <p className="card__subtitle">Sorted by moments tagged</p>
           </div>
           <a className="card__link" href="#topics">
-            View topics
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M3 6h6M6.5 3.5 9 6l-2.5 2.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            View topics <ArrowRight size={13} />
           </a>
         </div>
       </div>

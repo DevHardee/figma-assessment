@@ -13,42 +13,15 @@
 .sidebar__brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
   padding: 4px 6px 20px;
 }
 
-.sidebar__logo {
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-pill);
-  background: #14161a;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 15px;
+.sidebar__logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
   flex-shrink: 0;
-}
-
-.sidebar__brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.sidebar__brand-name {
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--color-text-primary);
-}
-
-.sidebar__brand-sub {
-  font-size: 9px;
-  color: var(--color-text-tertiary);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .sidebar__collapse {
@@ -163,7 +136,6 @@
 }
 
 @media (max-width: 1100px) {
-  .sidebar__brand-text,
   .sidebar__item-label,
   .sidebar__chevron,
   .sidebar__submenu {
@@ -176,6 +148,9 @@
   .sidebar__brand {
     justify-content: center;
     padding-bottom: 20px;
+  }
+  .sidebar__logo-img {
+    height: 26px;
   }
   .sidebar__item {
     justify-content: center;
