@@ -40,7 +40,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border-radius: var(--radius-pill);
+  border-radius: 6px;
   padding: 9px 18px;
   font-size: 13px;
   font-weight: 600;
@@ -58,7 +58,7 @@
 .btn--outline:hover { background: #f8f9fa; }
 
 .btn--accent {
-  background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
+  background: linear-gradient(90deg, #F48322, #F26CA7);
   color: #fff;
   border-color: transparent;
 }

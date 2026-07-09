@@ -80,10 +80,10 @@
 @media (max-width: 900px) {
   .project-time { flex-wrap: wrap; }
   .project-time__track { min-width: 100%; order: 3; }
-  .project-time__actions { order: 4; width: 100%; justify-content: flex-end; }
+  .project-time__actions { order: 4; width: 100%; justify-content: flex-end;   background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end)); }
 }
 
 @media (max-width: 480px) {
   .project-time__actions { flex-direction: column; }
-  .project-time__actions .btn { width: 100%; justify-content: center; }
+  .project-time__actions .btn { width: 100%; justify-content: center;   background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end)); }
 }

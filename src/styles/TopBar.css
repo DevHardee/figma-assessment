@@ -5,10 +5,10 @@
   padding: 14px 28px;
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
+  min-height: 60px;
   position: sticky;
   top: 0;
-  z-index: 10;
-  min-height: 60px;
+  z-index: 20;
 }
 
 .topbar__breadcrumb {
@@ -40,8 +40,8 @@
   gap: 7px;
   border: none;
   padding: 9px 20px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, var(--color-accent-start), var(--color-accent-end));
+  border-radius: 6px;
+  background: linear-gradient(90deg, #F48322, #F26CA7);
   color: #fff;
   font-size: 13px;
   font-weight: 600;

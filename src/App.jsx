@@ -16,9 +16,9 @@ export default function App() {
     <div className="app-shell">
       <Sidebar />
 
-      <div className="app-main">
-        <TopBar />
+      <TopBar />
 
+      <div className="app-main">
         <div className="app-main__content">
           <div className="app-main__card">
             <ProjectHeader />
