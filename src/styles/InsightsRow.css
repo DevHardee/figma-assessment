@@ -1,66 +1,54 @@
 .insights-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 16px;
-  }
-  
-  .sentiment-card__bar {
-    display: flex;
-    height: 10px;
-    border-radius: var(--radius-pill);
-    overflow: hidden;
-    margin-top: 6px;
-  }
-  
-  .sentiment-card__segment--positive {
-    background: var(--color-success);
-  }
-  
-  .sentiment-card__segment--neutral {
-    background: var(--color-neutral-bar);
-  }
-  
-  .sentiment-card__segment--negative {
-    background: var(--color-danger);
-  }
-  
-  .sentiment-card__legend {
-    display: flex;
-    gap: 18px;
-    margin-top: 14px;
-    font-size: var(--fs-xs);
-    color: var(--color-text-secondary);
-    flex-wrap: wrap;
-  }
-  
-  .sentiment-card__legend span {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  
-  .legend-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .legend-dot--positive {
-    background: var(--color-success);
-  }
-  
-  .legend-dot--neutral {
-    background: var(--color-neutral-bar);
-  }
-  
-  .legend-dot--negative {
-    background: var(--color-danger);
-  }
-  
-  @media (max-width: 900px) {
-    .insights-row {
-      grid-template-columns: 1fr;
-    }
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.sentiment-card__bar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-top: 10px;
+  gap: 2px;
+}
+
+.sentiment-card__segment {
+  border-radius: var(--radius-pill);
+}
+
+.sentiment-card__segment--positive { background: #22c55e; }
+.sentiment-card__segment--neutral  { background: #d0d4da; }
+.sentiment-card__segment--negative { background: #ef4444; }
+
+.sentiment-card__legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  flex-wrap: wrap;
+}
+
+.sentiment-card__legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.legend-dot--positive { background: #22c55e; }
+.legend-dot--neutral  { background: #d0d4da; }
+.legend-dot--negative { background: #ef4444; }
+
+@media (max-width: 900px) {
+  .insights-row { grid-template-columns: 1fr; }
+}

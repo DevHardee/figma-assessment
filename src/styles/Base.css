@@ -1,42 +1,23 @@
-@import "./variables.css";
+@import "./Variables.css";
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
+  font-size: 14px;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul,
-ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-}
+button { font-family: inherit; cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, p { margin: 0; }
 
 .app-shell {
   display: grid;
@@ -49,11 +30,19 @@ p {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  background: var(--color-bg);
 }
 
 .app-main__content {
-  padding: 24px 28px 40px;
   flex: 1;
+  padding: 20px 24px 40px;
+}
+
+.app-main__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px 28px;
 }
 
 .dashboard-split {
@@ -64,33 +53,25 @@ p {
   margin-top: 16px;
 }
 
-@media (max-width: 900px) {
-  .dashboard-split {
-    grid-template-columns: 1fr;
-  }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #d9dce1;
-  border-radius: 8px;
-}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: #d9dce1; border-radius: 6px; }
 
 @media (max-width: 1280px) {
   .app-shell {
-    grid-template-columns: 220px 1fr 340px;
+    grid-template-columns: 220px 1fr 320px;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .app-shell {
-    grid-template-columns: 76px 1fr;
+    grid-template-columns: 72px 1fr;
   }
-  .chat-panel {
-    display: none;
+  .chat-panel { display: none; }
+}
+
+@media (max-width: 900px) {
+  .dashboard-split {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -98,7 +79,10 @@ p {
   .app-shell {
     grid-template-columns: 1fr;
   }
-  .sidebar {
-    display: none;
-  }
+  .sidebar { display: none; }
+  .app-main__content { padding: 12px 12px 32px; }
+}
+
+@media (max-width: 480px) {
+  .app-main__card { padding: 16px 14px 20px; }
 }

@@ -21,10 +21,7 @@ export default function TopBar() {
       <div className="topbar__actions">
         <button className="topbar__chat-btn">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M7 1.2 8 5l3.8 1-3.8 1-1 3.8-1-3.8L2.2 6 6 5l1-3.8Z"
-              fill="#fff"
-            />
+            <path d="M7 1.5 8.2 5.5l4 1.2-4 1.2-1.2 4-1.2-4-4-1.2 4-1.2L7 1.5Z" fill="#fff" />
           </svg>
           Chat with AI
         </button>

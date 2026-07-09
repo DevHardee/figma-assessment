@@ -63,12 +63,22 @@ export default function ChatPanel() {
             key={msg.id}
             className={`chat-message chat-message--${msg.role}`}
           >
-            <div className="chat-message__bubble">
-              {renderMessageText(msg.text)}
-            </div>
-            {msg.timestamp && (
-              <span className="chat-message__timestamp">{msg.timestamp}</span>
+            {msg.role === "assistant" && (
+              <div className="chat-message__avatar">
+                <svg width="14" height="14" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="9" r="7" stroke="var(--color-accent)" strokeWidth="1.3" />
+                  <path d="M9 5.5v3.8l2.6 1.5" stroke="var(--color-accent)" strokeWidth="1.3" strokeLinecap="round" />
+                </svg>
+              </div>
             )}
+            <div className="chat-message__content">
+              <div className="chat-message__bubble">
+                {renderMessageText(msg.text)}
+              </div>
+              {msg.timestamp && (
+                <span className="chat-message__timestamp">{msg.timestamp}</span>
+              )}
+            </div>
           </div>
         ))}
       </div>
