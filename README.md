@@ -1,0 +1,1 @@
+This is the figma task for the creative minds frontend developer assessment
